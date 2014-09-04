@@ -1,0 +1,26 @@
+object frmMainIngreso: TfrmMainIngreso
+  Left = 386
+  Height = 527
+  Top = 154
+  Width = 801
+  Caption = 'INGRESO'
+  ClientHeight = 527
+  ClientWidth = 801
+  OnShow = FormShow
+  LCLVersion = '1.0.4.0'
+  object st: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 504
+    Width = 801
+    Panels = <    
+      item
+        Width = 150
+      end    
+      item
+        Alignment = taRightJustify
+        Width = 150
+      end>
+    SimplePanel = False
+  end
+end

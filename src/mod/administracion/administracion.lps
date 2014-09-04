@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="administracion.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="administracion"/>
+        <UsageCount Value="20"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_mainadministracion"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="30"/>
+        <CursorPos X="14" Y="47"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="10" HistoryIndex="9">
+      <Position1>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <Caret Line="13" Column="17" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <Caret Line="16" Column="15" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <Caret Line="39" Column="1" TopLine="23"/>
+      </Position3>
+      <Position4>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <Caret Line="40" Column="1" TopLine="24"/>
+      </Position4>
+      <Position5>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <Caret Line="36" Column="52" TopLine="24"/>
+      </Position5>
+      <Position6>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <Caret Line="42" Column="52" TopLine="25"/>
+      </Position6>
+      <Position7>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <Caret Line="53" Column="69" TopLine="30"/>
+      </Position7>
+      <Position8>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <Caret Line="38" Column="28" TopLine="1"/>
+      </Position8>
+      <Position9>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <Caret Line="39" Column="17" TopLine="16"/>
+      </Position9>
+      <Position10>
+        <Filename Value="frm_mainadministracion.pas"/>
+        <Caret Line="47" Column="55" TopLine="24"/>
+      </Position10>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
