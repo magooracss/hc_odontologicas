@@ -11,6 +11,7 @@ lib/
 *.or
 *.ppu
 
+
 #exclude executable output in windows
 *.exe
 
