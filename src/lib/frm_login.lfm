@@ -1,0 +1,83 @@
+object frmLogin: TfrmLogin
+  Left = 484
+  Height = 256
+  Top = 263
+  Width = 359
+  BorderStyle = bsDialog
+  Caption = 'Login'
+  ClientHeight = 256
+  ClientWidth = 359
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  FormStyle = fsSystemStayOnTop
+  Position = poOwnerFormCenter
+  LCLVersion = '1.0.4.0'
+  object edUsuario: TEdit
+    Left = 40
+    Height = 26
+    Top = 40
+    Width = 271
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 0
+  end
+  object edClave: TEdit
+    Left = 40
+    Height = 26
+    Top = 120
+    Width = 271
+    EchoMode = emPassword
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    PasswordChar = '*'
+    TabOrder = 1
+    Text = 'edClave'
+  end
+  object btnAceptar: TBitBtn
+    Left = 13
+    Height = 49
+    Top = 192
+    Width = 131
+    Caption = 'Aceptar'
+    TabOrder = 2
+  end
+  object btnCancelar: TBitBtn
+    Left = 214
+    Height = 49
+    Top = 192
+    Width = 131
+    Caption = 'Cancelar'
+    OnClick = btnCancelarClick
+    TabOrder = 3
+  end
+  object Label1: TLabel
+    Left = 40
+    Height = 17
+    Top = 21
+    Width = 45
+    Caption = 'Usuario'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 40
+    Height = 17
+    Top = 101
+    Width = 32
+    Caption = 'Clave'
+    ParentColor = False
+  end
+end

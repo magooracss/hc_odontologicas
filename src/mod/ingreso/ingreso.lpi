@@ -40,7 +40,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="5">
       <Unit0>
         <Filename Value="ingreso.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -54,6 +54,26 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frm_mainingreso"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="..\..\lib\frm_login.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmLogin"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_login"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\lib\dm_login.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMLogin"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dm_login"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\lib\dmgeneral.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="dmgeneral"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

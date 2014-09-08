@@ -4,12 +4,12 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="2">
+    <Units Count="5">
       <Unit0>
         <Filename Value="ingreso.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ingreso"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="22"/>
       </Unit0>
       <Unit1>
         <Filename Value="frm_mainingreso.pas"/>
@@ -18,20 +18,55 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frm_mainingreso"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="29"/>
+        <TopLine Value="7"/>
         <CursorPos X="41" Y="40"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="..\..\lib\frm_login.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmLogin"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_login"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="17"/>
+        <CursorPos X="80" Y="29"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\lib\dm_login.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMLogin"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dm_login"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="21"/>
+        <CursorPos X="2" Y="21"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\lib\dmgeneral.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="dmgeneral"/>
+        <UsageCount Value="20"/>
+      </Unit4>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="4" HistoryIndex="3">
+    <JumpHistory Count="9" HistoryIndex="8">
       <Position1>
         <Filename Value="frm_mainingreso.pas"/>
         <Caret Line="9" Column="31" TopLine="1"/>
@@ -48,6 +83,26 @@
         <Filename Value="frm_mainingreso.pas"/>
         <Caret Line="52" Column="5" TopLine="25"/>
       </Position4>
+      <Position5>
+        <Filename Value="..\..\lib\frm_login.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\..\lib\frm_login.pas"/>
+        <Caret Line="20" Column="42" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="..\..\lib\dm_login.pas"/>
+        <Caret Line="14" Column="23" TopLine="1"/>
+      </Position7>
+      <Position8>
+        <Filename Value="..\..\lib\dm_login.pas"/>
+        <Caret Line="20" Column="6" TopLine="1"/>
+      </Position8>
+      <Position9>
+        <Filename Value="..\..\lib\dm_login.pas"/>
+        <Caret Line="21" Column="5" TopLine="11"/>
+      </Position9>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

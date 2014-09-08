@@ -1,0 +1,8 @@
+object DMLogin: TDMLogin
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 419
+  HorizontalOffset = 553
+  VerticalOffset = 200
+  Width = 452
+end
