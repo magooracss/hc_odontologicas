@@ -27,6 +27,7 @@ implementation
 {$R *.lfm}
 uses
   versioninfo
+  ,dm_login
   ;
 
 { TfrmMainIngreso }
@@ -50,7 +51,8 @@ begin
   Info.Free;
 
   st.Panels[0].Text:= 'v:' + NroVersion;
-  st.Panels[1].Text:= FormatDateTime('dd/mm/yyyy', now)+ '        ';end;
+  st.Panels[1].Text:= 'Responsable: ' +  DMLogin.nombreUsuario;
+  st.Panels[2].Text:= FormatDateTime('dd/mm/yyyy', now)+ '        ';end;
 
 end.
 

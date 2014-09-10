@@ -1,0 +1,28 @@
+object DM_Conexion: TDM_Conexion
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 300
+  HorizontalOffset = 484
+  VerticalOffset = 164
+  Width = 400
+  object cnxGeneral: TZConnection
+    ControlsCodePage = cCP_UTF8
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    ClientCodepage = 'UTF8'
+    Properties.Strings = (
+      'PreprepareSQL=ON'
+      'codepage=UTF8'
+    )
+    TransactIsolationLevel = tiReadCommitted
+    SQLHourGlass = True
+    HostName = 'localhost'
+    Port = 0
+    Database = 'C:\folp\hc\HC.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird-2.5'
+    left = 96
+    top = 96
+  end
+end

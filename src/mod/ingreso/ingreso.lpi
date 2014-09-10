@@ -35,12 +35,24 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="1">
+    <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="LCL"/>
+        <PackageName Value="FCL"/>
       </Item1>
+      <Item2>
+        <PackageName Value="zcomponent"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="lazreport"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="rxnew"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
     </RequiredPackages>
-    <Units Count="5">
+    <Units Count="6">
       <Unit0>
         <Filename Value="ingreso.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -58,6 +70,7 @@
         <Filename Value="..\..\lib\frm_login.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmLogin"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frm_login"/>
       </Unit2>
@@ -65,15 +78,26 @@
         <Filename Value="..\..\lib\dm_login.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="DMLogin"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="dm_login"/>
       </Unit3>
       <Unit4>
         <Filename Value="..\..\lib\dmgeneral.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM_General"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="dmgeneral"/>
       </Unit4>
+      <Unit5>
+        <Filename Value="..\..\lib\dmconexion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM_Conexion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dmConexion"/>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

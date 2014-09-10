@@ -33,7 +33,7 @@ object frmLogin: TfrmLogin
   object edClave: TEdit
     Left = 40
     Height = 26
-    Top = 120
+    Top = 99
     Width = 271
     EchoMode = emPassword
     Font.CharSet = ANSI_CHARSET
@@ -45,7 +45,6 @@ object frmLogin: TfrmLogin
     ParentFont = False
     PasswordChar = '*'
     TabOrder = 1
-    Text = 'edClave'
   end
   object btnAceptar: TBitBtn
     Left = 13
@@ -53,6 +52,7 @@ object frmLogin: TfrmLogin
     Top = 192
     Width = 131
     Caption = 'Aceptar'
+    OnClick = btnAceptarClick
     TabOrder = 2
   end
   object btnCancelar: TBitBtn
@@ -75,9 +75,25 @@ object frmLogin: TfrmLogin
   object Label2: TLabel
     Left = 40
     Height = 17
-    Top = 101
+    Top = 80
     Width = 32
     Caption = 'Clave'
     ParentColor = False
+  end
+  object edMensaje: TStaticText
+    Left = 7
+    Height = 48
+    Top = 136
+    Width = 345
+    BorderStyle = sbsSunken
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
   end
 end

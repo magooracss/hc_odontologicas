@@ -5,4 +5,102 @@ object DMLogin: TDMLogin
   HorizontalOffset = 553
   VerticalOffset = 200
   Width = 452
+  object qUsuario: TZQuery
+    Connection = DM_Conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM Usuarios'
+      'WHERE (UPPER(usuario) LIKE UPPER(:usuario))'
+      '       and (clave = :clave)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'usuario'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'clave'
+        ParamType = ptUnknown
+      end>
+    left = 56
+    top = 48
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'usuario'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'clave'
+        ParamType = ptUnknown
+      end>
+    object qUsuarioID: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qUsuarioGRUPO_ID: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'GRUPO_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qUsuarioNOMBRE: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'NOMBRE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qUsuarioUSUARIO: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'USUARIO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qUsuarioCLAVE: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'CLAVE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qUsuarioBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
 end

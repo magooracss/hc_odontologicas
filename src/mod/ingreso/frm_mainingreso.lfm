@@ -18,7 +18,9 @@ object frmMainIngreso: TfrmMainIngreso
         Width = 150
       end    
       item
-        Alignment = taRightJustify
+        Width = 500
+      end    
+      item
         Width = 150
       end>
     SimplePanel = False

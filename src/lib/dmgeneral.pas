@@ -42,8 +42,8 @@ type
     qLevantarValoresNOMBRE: TStringField;
     qLevantarValoresVALORINT: TLongintField;
     qLevantarValoresVALORSTR: TStringField;
-    RxMemoryData1: TRxMemoryData;
     qLevantarValores: TZQuery;
+    RxMemoryData1: TRxMemoryData;
   private
     { private declarations }
   public

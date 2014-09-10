@@ -1,8 +1,8 @@
 object DM_General: TDM_General
   OldCreateOrder = False
   Height = 314
-  HorizontalOffset = 0
-  VerticalOffset = 143
+  HorizontalOffset = 431
+  VerticalOffset = 274
   Width = 632
   object ImgAcciones: TImageList
     left = 40
@@ -1099,12 +1099,6 @@ object DM_General: TDM_General
       FF00FFFFFF00FFFFFF00FFFFFF00
     }
   end
-  object RxMemoryData1: TRxMemoryData
-    FieldDefs = <>
-    PacketRecords = 0
-    left = 40
-    top = 104
-  end
   object frShapeObject1: TfrShapeObject
     left = 124
     top = 168
@@ -1112,17 +1106,6 @@ object DM_General: TDM_General
   object frDataset: TfrDBDataSet
     left = 37
     top = 248
-  end
-  object elReporte: TfrReport
-    Dataset = frDataset
-    DefaultCopies = 0
-    InitialZoom = pzPageWidth
-    Options = []
-    PreviewButtons = [pbZoom, pbPrint, pbExit]
-    DataType = dtDataSet
-    Title = 'Listado'
-    left = 42
-    top = 180
   end
   object qLevantarValores: TZQuery
     Connection = DM_Conexion.cnxGeneral
@@ -1209,5 +1192,23 @@ object DM_General: TDM_General
         Name = 'Nombre'
         ParamType = ptUnknown
       end>
+  end
+  object elReporte: TfrReport
+    Dataset = frDataset
+    InitialZoom = pzPageWidth
+    Options = []
+    PreviewButtons = [pbZoom, pbPrint, pbExit]
+    DataType = dtDataSet
+    Title = 'Listado'
+    left = 40
+    top = 176
+    ReportForm = {
+      19000000
+    }
+  end
+  object RxMemoryData1: TRxMemoryData
+    FieldDefs = <>
+    left = 48
+    top = 112
   end
 end
