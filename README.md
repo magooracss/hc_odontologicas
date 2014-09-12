@@ -9,6 +9,8 @@ Información técnica
 Hasta ahora el programa está escrito en Lazarus/Free Pascal usando como base de datos Firebird.
 Cada sector/modulo/zona tiene su propio ejecutable
 
+Los iconos usados están sacados de la open icon library http://openiconlibrary.sourceforge.net/
+
 
 Estructura de directorios
 ================
@@ -22,6 +24,7 @@ Estructura de directorios
 - sql  Consultas SQL. Fundamentalmente creación de objetos en la BD 
 
 
+
 Autor
 ================
 
@@ -30,8 +33,6 @@ Para cualquier consulta o comentario, pueden encontrarme :
 Carlos Enrique Rodriguez
 
 lw4dbf@gmail.com
-
 @magooracss
-
 www.cerodriguez.com.ar
 
