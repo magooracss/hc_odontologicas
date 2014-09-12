@@ -1,4 +1,4 @@
-unit dm_login;
+unit dm_seguridad;
 
 {$mode objfpc}{$H+}
 
@@ -14,9 +14,9 @@ const
 
 type
 
-  { TDMLogin }
+  { TDMSeguridad }
 
-  TDMLogin = class(TDataModule)
+  TDMSeguridad = class(TDataModule)
     qUsuario: TZQuery;
     qUsuarioBVISIBLE: TSmallintField;
     qUsuarioCLAVE: TStringField;
@@ -35,20 +35,20 @@ type
   end;
 
 var
-  DMLogin: TDMLogin;
+  DMSeguridad: TDMSeguridad;
 
 implementation
 
 {$R *.lfm}
 
-{ TDMLogin }
+{ TDMSeguridad }
 
-procedure TDMLogin.DataModuleCreate(Sender: TObject);
+procedure TDMSeguridad.DataModuleCreate(Sender: TObject);
 begin
   _usrActivo:= GUIDNULO;
 end;
 
-function TDMLogin.Acceso(nombre, clave: string): integer;
+function TDMSeguridad.Acceso(nombre, clave: string): integer;
 begin
   with qUsuario do
   begin
@@ -69,7 +69,7 @@ begin
 
 end;
 
-function TDMLogin.AccValida(accion: string): boolean;
+function TDMSeguridad.AccValida(accion: string): boolean;
 begin
 
 end;

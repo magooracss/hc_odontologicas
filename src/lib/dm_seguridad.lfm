@@ -1,4 +1,4 @@
-object DMLogin: TDMLogin
+object DMSeguridad: TDMSeguridad
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 419

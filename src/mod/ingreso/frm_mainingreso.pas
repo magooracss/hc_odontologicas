@@ -5,14 +5,20 @@ unit frm_mainingreso;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
+  ExtCtrls, StdCtrls, Buttons;
 
 type
 
   { TfrmMainIngreso }
 
   TfrmMainIngreso = class(TForm)
+    btnBuscarPaciente: TBitBtn;
+    edDocumentoPaciente: TEdit;
+    Panel1: TPanel;
+    Panel2: TPanel;
     st: TStatusBar;
+    StaticText1: TStaticText;
     procedure FormShow(Sender: TObject);
   private
     procedure Inicializar;
@@ -27,7 +33,7 @@ implementation
 {$R *.lfm}
 uses
   versioninfo
-  ,dm_login
+  ,dm_seguridad
   ;
 
 { TfrmMainIngreso }
@@ -51,7 +57,7 @@ begin
   Info.Free;
 
   st.Panels[0].Text:= 'v:' + NroVersion;
-  st.Panels[1].Text:= 'Responsable: ' +  DMLogin.nombreUsuario;
+  st.Panels[1].Text:= 'Responsable: ' +  DMSeguridad.nombreUsuario;
   st.Panels[2].Text:= FormatDateTime('dd/mm/yyyy', now)+ '        ';end;
 
 end.

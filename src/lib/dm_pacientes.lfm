@@ -1,0 +1,193 @@
+object DMPacientes: TDMPacientes
+  OldCreateOrder = False
+  Height = 368
+  HorizontalOffset = 464
+  VerticalOffset = 194
+  Width = 300
+  object Pacientes: TRxMemoryData
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'HC'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Apellidos'
+        DataType = ftString
+        Precision = 0
+        Size = 500
+      end    
+      item
+        Name = 'Nombres'
+        DataType = ftString
+        Precision = 0
+        Size = 500
+      end    
+      item
+        Name = 'documentoTipo_id'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'documento'
+        DataType = ftString
+        Precision = 0
+        Size = 50
+      end    
+      item
+        Name = 'nacionalidad_id'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'sexo'
+        DataType = ftString
+        Precision = 0
+        Size = 1
+      end    
+      item
+        Name = 'fnacimiento'
+        DataType = ftUnknown
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'obraSocial_id'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'bVisible'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end>
+    left = 49
+    top = 45
+    object Pacientesid: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object PacientesHC: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HC'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object PacientesApellidos: TStringField
+      DisplayWidth = 500
+      FieldKind = fkData
+      FieldName = 'Apellidos'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 500
+    end
+    object PacientesNombres: TStringField
+      DisplayWidth = 500
+      FieldKind = fkData
+      FieldName = 'Nombres'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 500
+    end
+    object PacientesdocumentoTipo_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'documentoTipo_id'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object Pacientesdocumento: TStringField
+      DisplayWidth = 50
+      FieldKind = fkData
+      FieldName = 'documento'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object Pacientesnacionalidad_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'nacionalidad_id'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object Pacientessexo: TStringField
+      DisplayWidth = 1
+      FieldKind = fkData
+      FieldName = 'sexo'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object Pacientesfnacimiento: TField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'fnacimiento'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object PacientesobraSocial_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'obraSocial_id'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object PacientesbVisible: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'bVisible'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+end

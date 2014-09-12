@@ -18,7 +18,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="1"/>
-      <BuildNr Value="1"/>
+      <BuildNr Value="2"/>
       <Language Value="080A"/>
       <StringTable CompanyName="RACSS Programación" InternalName="Ingreso HC" LegalCopyright="Carlos Enrique Rodriguez para RACSS Programación" LegalTrademarks="www.racss.com.ar - desarrollo@racss.com.ar" ProductVersion=""/>
     </VersionInfo>
@@ -52,7 +52,7 @@
         <PackageName Value="LCL"/>
       </Item5>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="8">
       <Unit0>
         <Filename Value="ingreso.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -75,12 +75,12 @@
         <UnitName Value="frm_login"/>
       </Unit2>
       <Unit3>
-        <Filename Value="..\..\lib\dm_login.pas"/>
+        <Filename Value="..\..\lib\dm_seguridad.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="DMLogin"/>
+        <ComponentName Value="DMSeguridad"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <UnitName Value="dm_login"/>
+        <UnitName Value="dm_seguridad"/>
       </Unit3>
       <Unit4>
         <Filename Value="..\..\lib\dmgeneral.pas"/>
@@ -98,6 +98,22 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="dmConexion"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="frm_pacienteae.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPacienteAE"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_pacienteae"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\lib\dm_pacientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMPacientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dm_pacientes"/>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -27,6 +27,7 @@ object frmLogin: TfrmLogin
     Font.Name = 'Arial'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    OnKeyPress = edUsuarioKeyPress
     ParentFont = False
     TabOrder = 0
   end
@@ -42,6 +43,7 @@ object frmLogin: TfrmLogin
     Font.Name = 'Arial'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    OnKeyPress = edClaveKeyPress
     ParentFont = False
     PasswordChar = '*'
     TabOrder = 1
