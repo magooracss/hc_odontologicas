@@ -1,0 +1,8 @@
+CREATE GENERATOR nroHC;
+CREATE GENERATOR  paisesID;
+CREATE GENERATOR  documentosTiposID;
+CREATE GENERATOR  contactosTiposID;
+CREATE GENERATOR  obrasSocialesID;
+CREATE GENERATOR  contactosCategoriasID;
+CREATE GENERATOR  localidadesID;
+CREATE GENERATOR  provinciasID;
