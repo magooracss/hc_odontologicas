@@ -1,7 +1,7 @@
 object frmMainIngreso: TfrmMainIngreso
-  Left = 316
+  Left = 250
   Height = 527
-  Top = 195
+  Top = 69
   Width = 801
   Caption = 'INGRESO'
   ClientHeight = 527
@@ -12,6 +12,7 @@ object frmMainIngreso: TfrmMainIngreso
   Font.Name = 'Arial'
   Font.Pitch = fpVariable
   Font.Quality = fqDraft
+  OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '1.0.4.0'
   object st: TStatusBar
@@ -33,11 +34,11 @@ object frmMainIngreso: TfrmMainIngreso
   end
   object Panel1: TPanel
     Left = 0
-    Height = 146
+    Height = 208
     Top = 0
     Width = 801
     Align = alTop
-    ClientHeight = 146
+    ClientHeight = 208
     ClientWidth = 801
     TabOrder = 1
     object edDocumentoPaciente: TEdit
@@ -53,6 +54,7 @@ object frmMainIngreso: TfrmMainIngreso
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
       Font.Style = [fsBold]
+      OnKeyPress = edDocumentoPacienteKeyPress
       ParentFont = False
       TabOrder = 0
     end
@@ -587,7 +589,74 @@ object frmMainIngreso: TfrmMainIngreso
         0000000000000000000000000000000000000000000000000000
       }
       Layout = blGlyphTop
+      OnClick = btnBuscarPacienteClick
       TabOrder = 2
+    end
+    object DBEdit1: TDBEdit
+      Left = 544
+      Height = 98
+      Top = 24
+      Width = 248
+      DataField = 'HC'
+      DataSource = ds_Paciente
+      ReadOnly = True
+      Anchors = [akTop, akRight]
+      CharCase = ecNormal
+      Color = clSkyBlue
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -64
+      Font.Name = 'Arial Black'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 3
+    end
+    object DBEdit2: TDBEdit
+      Left = 8
+      Height = 30
+      Top = 136
+      Width = 784
+      DataField = 'Apellidos'
+      DataSource = ds_Paciente
+      ReadOnly = True
+      Anchors = [akTop, akLeft, akRight]
+      CharCase = ecNormal
+      Color = clSkyBlue
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 4
+    end
+    object DBEdit3: TDBEdit
+      Left = 8
+      Height = 30
+      Top = 168
+      Width = 784
+      DataField = 'Nombres'
+      DataSource = ds_Paciente
+      ReadOnly = True
+      Anchors = [akTop, akLeft, akRight]
+      CharCase = ecNormal
+      Color = clSkyBlue
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 5
     end
   end
   object Panel2: TPanel
@@ -597,5 +666,11 @@ object frmMainIngreso: TfrmMainIngreso
     Width = 801
     Align = alBottom
     TabOrder = 2
+  end
+  object ds_Paciente: TDatasource
+    AutoEdit = False
+    DataSet = DMPacientes.Pacientes
+    left = 495
+    top = 88
   end
 end

@@ -56,7 +56,7 @@ object DMPacientes: TDMPacientes
       end    
       item
         Name = 'fnacimiento'
-        DataType = ftUnknown
+        DataType = ftDateTime
         Precision = 0
         Size = 0
       end    
@@ -72,6 +72,7 @@ object DMPacientes: TDMPacientes
         Precision = 0
         Size = 0
       end>
+    AfterInsert = PacientesAfterInsert
     left = 49
     top = 45
     object Pacientesid: TStringField
@@ -148,26 +149,26 @@ object DMPacientes: TDMPacientes
       ReadOnly = False
       Required = False
     end
-    object Pacientessexo: TStringField
-      DisplayWidth = 1
+    object Pacientesfnacimiento: TDateTimeField
+      DisplayWidth = 10
       FieldKind = fkData
-      FieldName = 'sexo'
+      FieldName = 'fnacimiento'
       Index = 7
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Size = 1
     end
-    object Pacientesfnacimiento: TField
-      DisplayWidth = 10
+    object Pacientessexo: TStringField
+      DisplayWidth = 1
       FieldKind = fkData
-      FieldName = 'fnacimiento'
+      FieldName = 'sexo'
       Index = 8
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Size = 1
     end
     object PacientesobraSocial_id: TLongintField
       DisplayWidth = 10
@@ -189,5 +190,811 @@ object DMPacientes: TDMPacientes
       ReadOnly = False
       Required = False
     end
+  end
+  object qBusPacApellido: TZQuery
+    Connection = DM_Conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM Pacientes'
+      'WHERE (bVisible = 1)'
+      '             and (UPPER(Apellidos) LIKE ''%'' || UPPER(:parametro) ||''%'')'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'parametro'
+        ParamType = ptUnknown
+      end>
+    left = 184
+    top = 96
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'parametro'
+        ParamType = ptUnknown
+      end>
+    object qBusPacApellidoID: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qBusPacApellidoHC: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HC'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacApellidoAPELLIDOS: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'APELLIDOS'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qBusPacApellidoNOMBRES: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'NOMBRES'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qBusPacApellidoDOCUMENTOTIPO_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DOCUMENTOTIPO_ID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacApellidoDOCUMENTO: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qBusPacApellidoNACIONALIDAD_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NACIONALIDAD_ID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacApellidoSEXO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'SEXO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBusPacApellidoFNACIMIENTO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FNACIMIENTO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacApellidoOBRASOCIAL_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'OBRASOCIAL_ID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacApellidoBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qBusPacDocumento: TZQuery
+    Connection = DM_Conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM Pacientes'
+      'WHERE (bVisible = 1)'
+      '             and (UPPER(Documento) LIKE ''%'' || UPPER(:parametro) ||''%'')'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'parametro'
+        ParamType = ptUnknown
+      end>
+    left = 184
+    top = 168
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'parametro'
+        ParamType = ptUnknown
+      end>
+    object qBusPacNombreID1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qBusPacNombreHC1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HC'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacNombreAPELLIDOS1: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'APELLIDOS'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qBusPacNombreNOMBRES1: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'NOMBRES'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qBusPacNombreDOCUMENTOTIPO_ID1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DOCUMENTOTIPO_ID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacNombreDOCUMENTO1: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qBusPacNombreNACIONALIDAD_ID1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NACIONALIDAD_ID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacNombreSEXO1: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'SEXO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBusPacNombreFNACIMIENTO1: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FNACIMIENTO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacNombreOBRASOCIAL_ID1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'OBRASOCIAL_ID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacNombreBVISIBLE1: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qBusPacHC: TZQuery
+    Connection = DM_Conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM Pacientes'
+      'WHERE (bVisible = 1)'
+      '             and (HC = :parametro)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'parametro'
+        ParamType = ptUnknown
+      end>
+    left = 184
+    top = 240
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'parametro'
+        ParamType = ptUnknown
+      end>
+    object qBusPacNombreID2: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qBusPacNombreHC2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HC'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacNombreAPELLIDOS2: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'APELLIDOS'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qBusPacNombreNOMBRES2: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'NOMBRES'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qBusPacNombreDOCUMENTOTIPO_ID2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DOCUMENTOTIPO_ID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacNombreDOCUMENTO2: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qBusPacNombreNACIONALIDAD_ID2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NACIONALIDAD_ID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacNombreSEXO2: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'SEXO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBusPacNombreFNACIMIENTO2: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FNACIMIENTO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacNombreOBRASOCIAL_ID2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'OBRASOCIAL_ID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusPacNombreBVISIBLE2: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object PacientesSEL: TZQuery
+    Connection = DM_Conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM Pacientes'
+      'WHERE id = :id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    left = 48
+    top = 112
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    object PacientesSELID: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object PacientesSELHC: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HC'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object PacientesSELAPELLIDOS: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'APELLIDOS'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object PacientesSELNOMBRES: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'NOMBRES'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object PacientesSELDOCUMENTOTIPO_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DOCUMENTOTIPO_ID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object PacientesSELDOCUMENTO: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object PacientesSELNACIONALIDAD_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NACIONALIDAD_ID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object PacientesSELSEXO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'SEXO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object PacientesSELFNACIMIENTO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FNACIMIENTO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object PacientesSELOBRASOCIAL_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'OBRASOCIAL_ID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object PacientesSELBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object PacientesUPD: TZQuery
+    Connection = DM_Conexion.cnxGeneral
+    SQL.Strings = (
+      'UPDATE Pacientes'
+      'SET'
+      ' HC = :HC'
+      ', APELLIDOS = :APELLIDOS'
+      ', NOMBRES = :NOMBRES '
+      ', DOCUMENTOTIPO_ID = :DOCUMENTOTIPO_ID '
+      ', DOCUMENTO = :DOCUMENTO '
+      ', NACIONALIDAD_ID = :NACIONALIDAD_ID '
+      ', SEXO = :SEXO '
+      ', FNACIMIENTO = :FNACIMIENTO '
+      ', OBRASOCIAL_ID = :OBRASOCIAL_ID '
+      ', BVISIBLE = :BVISIBLE '
+      'WHERE (id = :id)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'HC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'APELLIDOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NOMBRES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTOTIPO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NACIONALIDAD_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SEXO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FNACIMIENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OBRASOCIAL_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    left = 48
+    top = 168
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'HC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'APELLIDOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NOMBRES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTOTIPO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NACIONALIDAD_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SEXO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FNACIMIENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OBRASOCIAL_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+  end
+  object PacientesINS: TZQuery
+    Connection = DM_Conexion.cnxGeneral
+    SQL.Strings = (
+      'INSERT INTO Pacientes'
+      '(ID, HC, APELLIDOS, NOMBRES, DOCUMENTOTIPO_ID, DOCUMENTO, NACIONALIDAD_ID, SEXO, FNACIMIENTO, OBRASOCIAL_ID, BVISIBLE)'
+      'VALUES'
+      '(:ID, :HC, :APELLIDOS, :NOMBRES, :DOCUMENTOTIPO_ID, :DOCUMENTO, :NACIONALIDAD_ID, :SEXO, :FNACIMIENTO, :OBRASOCIAL_ID, :BVISIBLE)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'APELLIDOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NOMBRES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTOTIPO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NACIONALIDAD_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SEXO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FNACIMIENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OBRASOCIAL_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end>
+    left = 48
+    top = 232
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'APELLIDOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NOMBRES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTOTIPO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NACIONALIDAD_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SEXO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FNACIMIENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OBRASOCIAL_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end>
   end
 end

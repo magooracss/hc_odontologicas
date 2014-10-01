@@ -6,13 +6,16 @@ interface
 
 uses
   Classes, SysUtils, db, FileUtil, dbdateedit, Forms, Controls, Graphics,
-  Dialogs, DbCtrls, StdCtrls, ExtCtrls, DBGrids;
+  Dialogs, DbCtrls, StdCtrls, ExtCtrls, DBGrids, Buttons
+  , dmgeneral
+  ;
 
 type
 
   { TfrmPacienteAE }
 
   TfrmPacienteAE = class(TForm)
+    BitBtn1: TBitBtn;
     ComboBox1: TComboBox;
     ComboBox2: TComboBox;
     DBDateEdit1: TDBDateEdit;
@@ -37,11 +40,14 @@ type
     Sexo: TDBRadioGroup;
     StaticText1: TStaticText;
     StaticText2: TStaticText;
+    procedure BitBtn1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
+    _idPaciente: GUID_ID;
   public
-    { public declarations }
+    property pacienteID: GUID_ID read _idPaciente write _idPaciente;
   end;
 
 var
@@ -59,12 +65,27 @@ uses
 procedure TfrmPacienteAE.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
-//  DMPacientes.Free;
+ // DMPacientes.Free;
+end;
+
+procedure TfrmPacienteAE.BitBtn1Click(Sender: TObject);
+begin
+  _idPaciente:= DMPacientes.Grabar;
+  ModalResult:= mrOK;
 end;
 
 procedure TfrmPacienteAE.FormCreate(Sender: TObject);
 begin
-//  DMPacientes:= TDMPacientes.Create(self);
+ // DMPacientes:= TDMPacientes.Create(self);
+  _idPaciente:= GUIDNULO;
+end;
+
+procedure TfrmPacienteAE.FormShow(Sender: TObject);
+begin
+  if _idPaciente = GUIDNULO then
+    DMPacientes.Nuevo
+  else
+    DMPacientes.Editar(_idPaciente);
 end;
 
 end.

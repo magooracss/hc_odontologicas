@@ -9,7 +9,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   controls, //Para el login
   Forms, rxnew, zcomponent, frm_mainingreso, frm_login, dm_seguridad, dmgeneral,
-  dmconexion, frm_pacienteae, dm_pacientes
+  dmconexion, frm_pacienteae, dm_pacientes, frm_busquedapaciente
   { you can add units after this };
 
 {$R *.res}
@@ -33,6 +33,7 @@ begin
   else
   begin
     frmLogin.Free;
+  Application.CreateForm(TfrmBusquedaPacientes, frmBusquedaPacientes);
     Application.Run;
   end;
 end.

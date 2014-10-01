@@ -18,7 +18,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="1"/>
-      <BuildNr Value="3"/>
+      <BuildNr Value="6"/>
       <Language Value="080A"/>
       <StringTable CompanyName="RACSS Programación" InternalName="Ingreso HC" LegalCopyright="Carlos Enrique Rodriguez para RACSS Programación" LegalTrademarks="www.racss.com.ar - desarrollo@racss.com.ar" ProductVersion=""/>
     </VersionInfo>
@@ -52,7 +52,7 @@
         <PackageName Value="LCL"/>
       </Item5>
     </RequiredPackages>
-    <Units Count="8">
+    <Units Count="9">
       <Unit0>
         <Filename Value="ingreso.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -114,6 +114,13 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="dm_pacientes"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="..\..\lib\frm_busquedapaciente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBusquedaPacientes"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_busquedapaciente"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
