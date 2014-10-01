@@ -21,10 +21,11 @@ begin
   Application.Initialize;
   Application.CreateForm(TDM_Conexion, DM_Conexion);
   Application.CreateForm(TDM_General, DM_General);
+  Application.CreateForm(TDMPacientes, DMPacientes);
   Application.CreateForm(TDMSeguridad, DMSeguridad);
-  Application.CreateForm(TfrmLogin, frmLogin);
   Application.CreateForm(TfrmMainIngreso, frmMainIngreso);
 
+  frmlogin:= TfrmLogin.Create (nil);
   if frmLogin.ShowModal <>  mrOK then
   begin
      Application.Terminate;

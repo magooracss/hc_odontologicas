@@ -59,12 +59,12 @@ uses
 procedure TfrmPacienteAE.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
-  DMPacientes.Free;
+//  DMPacientes.Free;
 end;
 
 procedure TfrmPacienteAE.FormCreate(Sender: TObject);
 begin
-  DMPacientes:= TDMPacientes.Create(self);
+//  DMPacientes:= TDMPacientes.Create(self);
 end;
 
 end.
